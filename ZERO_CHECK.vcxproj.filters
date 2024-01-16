@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CMakeFiles\5c1c7d2a98cce74627fb846a292bdc0f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{67F23F7D-69FF-3494-BCFA-DEE0900BD33E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

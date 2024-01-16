@@ -1,0 +1,6 @@
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/CMakeFiles/ALL_BUILD.dir
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/NCLCoreClasses/CMakeFiles/NCLCoreClasses.dir
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/CSC8503CoreClasses/CMakeFiles/CSC8503CoreClasses.dir
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/OpenGLRendering/CMakeFiles/OpenGLRendering.dir
+C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/CSC8503/CMakeFiles/CSC8503.dir

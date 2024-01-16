@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CMakeFiles\CSC8503.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\GameTechRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\NetworkedGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\NetworkPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\StateGameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\TutorialGame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CCTVStateObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\EvilGoose.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\GameTechRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\NetworkedGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\NetworkPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\StateGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\TutorialGame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\Block.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CCTVStateObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\PlayerObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\SpawnGoal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\EvilGoose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CMakeFiles\CSC8503.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CMakeFiles\CSC8503.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E9F2C510-88EC-3663-AB56-88C3593B25AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{2A52E1BF-4E26-3147-85CC-CAA68443BC75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2DD91FEA-87A6-3168-9649-5AADCB2C9311}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

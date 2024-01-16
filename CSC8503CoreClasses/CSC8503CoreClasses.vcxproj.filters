@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\cmake_pch.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Debug.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameWorld.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\RenderObject.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\RenderObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Transform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourAction.h">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourNode.h">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourNodeWithChildren.h">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourSelector.h">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourSelector.cpp">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourSequence.h">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\BehaviourSequence.cpp">
+      <Filter>AI\Behaviour Trees</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PushdownMachine.h">
+      <Filter>AI\Pushdown Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PushdownMachine.cpp">
+      <Filter>AI\Pushdown Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PushdownState.h">
+      <Filter>AI\Pushdown Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PushdownState.cpp">
+      <Filter>AI\Pushdown Automata</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\State.h">
+      <Filter>AI\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\StateMachine.h">
+      <Filter>AI\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\StateMachine.cpp">
+      <Filter>AI\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\StateTransition.h">
+      <Filter>AI\State Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationGrid.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationGrid.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationMesh.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationMesh.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationMap.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NavigationPath.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\AABBVolume.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CapsuleVolume.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CapsuleVolume.cpp">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CollisionDetection.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CollisionDetection.cpp">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CollisionVolume.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\OBBVolume.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\QuadTree.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\QuadTree.cpp">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Ray.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\SphereVolume.h">
+      <Filter>Collision Detection</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameClient.h">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameClient.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameServer.h">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\GameServer.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkBase.h">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkBase.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkObject.h">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkObject.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkState.h">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\NetworkState.cpp">
+      <Filter>Networking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\Constraint.h">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PositionConstraint.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PositionConstraint.h">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\OrientationConstraint.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\OrientationConstraint.h">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PhysicsObject.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PhysicsObject.h">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PhysicsSystem.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\PhysicsSystem.h">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\callbacks.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\list.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\list.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\protocol.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\protocol.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\win32.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\win32.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\enet.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\time.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\types.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\utility.h">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\compress.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\host.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\packet.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\enet\peer.c">
+      <Filter>eNet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Debug\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CMakeFiles\CSC8503CoreClasses.dir\Release\cmake_pch.hxx">
+      <Filter>Precompile Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ben\source\repos\CSC8503_physics_ai_networking\CSC8503 physics ai networking\CSC8503CoreClasses\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AI">
+      <UniqueIdentifier>{535BE823-DA75-3B42-829A-CB394DF3FCE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Behaviour Trees">
+      <UniqueIdentifier>{785C6228-722D-3B18-870D-656AD04B9C46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Pathfinding">
+      <UniqueIdentifier>{DB7095AF-635D-309C-8D04-031C2931D9DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Pushdown Automata">
+      <UniqueIdentifier>{29645CF9-3494-3EB1-BECF-CC24DC1AC0BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine">
+      <UniqueIdentifier>{4A3777B3-4D8B-3435-A34B-9552F2337D5C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision Detection">
+      <UniqueIdentifier>{AB9043E1-EDC1-3A69-9EBB-53D7F3071A2C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E9F2C510-88EC-3663-AB56-88C3593B25AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Networking">
+      <UniqueIdentifier>{EF987BE9-D173-39AB-AE8D-96E0734D4672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{016FCAB2-3221-398D-8ED7-A92DC1FFE475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Precompile Header File">
+      <UniqueIdentifier>{2A52E1BF-4E26-3147-85CC-CAA68443BC75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2DD91FEA-87A6-3168-9649-5AADCB2C9311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="eNet">
+      <UniqueIdentifier>{565A0D5A-B628-301C-9467-F54A9F6117AC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
