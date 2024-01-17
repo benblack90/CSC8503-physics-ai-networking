@@ -552,16 +552,16 @@ void NCL::CollisionDetection::FindClosestFace(GameObject* a, GameObject* b, Mink
 	float areaB = Maths::AreaofTri3D(projectedOrigin, faces[closestFaceIndex].c.mkw, faces[closestFaceIndex].a.mkw);
 	float areaC = Maths::AreaofTri3D(projectedOrigin, faces[closestFaceIndex].a.mkw, faces[closestFaceIndex].b.mkw);
 	float totalArea = Maths::AreaofTri3D(faces[closestFaceIndex].a.mkw, faces[closestFaceIndex].b.mkw, faces[closestFaceIndex].c.mkw);
-	Vector3 barymetric({ 0,0,0 });
-	barymetric.x = areaA / totalArea;
-	barymetric.y = areaB / totalArea;
-	barymetric.z = areaC / totalArea;
-	Vector3 localA = faces[closestFaceIndex].a.aPos * barymetric.x
-		+ faces[closestFaceIndex].b.aPos * barymetric.y
-		+ faces[closestFaceIndex].c.aPos * barymetric.z;
-	Vector3 localB = faces[closestFaceIndex].a.bPos * barymetric.x
-		+ faces[closestFaceIndex].b.bPos * barymetric.y
-		+ faces[closestFaceIndex].c.bPos * barymetric.z;
+	Vector3 barycentric({ 0,0,0 });
+	barycentric.x = areaA / totalArea;
+	barycentric.y = areaB / totalArea;
+	barycentric.z = areaC / totalArea;
+	Vector3 localA = faces[closestFaceIndex].a.aPos * barycentric.x
+		+ faces[closestFaceIndex].b.aPos * barycentric.y
+		+ faces[closestFaceIndex].c.aPos * barycentric.z;
+	Vector3 localB = faces[closestFaceIndex].a.bPos * barycentric.x
+		+ faces[closestFaceIndex].b.bPos * barycentric.y
+		+ faces[closestFaceIndex].c.bPos * barycentric.z;
 	float pen = (localA - localB).Length();
 	Vector3 norm = (localA - localB).Normalised();
 	localA -= a->GetTransform().GetPosition();
