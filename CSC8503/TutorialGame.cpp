@@ -160,7 +160,7 @@ void TutorialGame::BroadcastSnapshot(bool deltaFrame) {
 	}
 }
 
-void TutorialGame::UpdateAsClient(float dt) {
+void TutorialGame::WriteAndSendClientPacket(float dt) {
 	ClientPacket newPacket;
 	if (Window::GetKeyboard()->KeyPressed(KeyCodes::SPACE)) {
 		//fire button pressed!
@@ -261,6 +261,9 @@ void TutorialGame::UpdateMinimumState() {
 
 void TutorialGame::UpdateGame(float dt) {
 	timeToNextPacket -= dt;
+	world->GetMainCamera().UpdateCamera(dt);
+	UpdateKeys();
+	LockCamera();
 	if (server || singlePlayer)
 	{
 		if (server)
@@ -274,27 +277,6 @@ void TutorialGame::UpdateGame(float dt) {
 			}
 		}
 
-
-		if (!inSelectionMode) {
-			world->GetMainCamera().UpdateCamera(dt);
-		}
-		if (lockedObject != nullptr) {
-			Vector3 objPos = lockedObject->GetTransform().GetPosition();
-			Vector3 camPos = objPos + lockedObject->GetTransform().GetOrientation() * lockedOffset;
-
-			Matrix4 temp = Matrix4::BuildViewMatrix(camPos, objPos, Vector3(0, 1, 0));
-
-			Matrix4 modelMat = temp.Inverse();
-
-			Quaternion q(modelMat);
-			Vector3 angles = q.ToEuler(); //nearly there now!
-
-			world->GetMainCamera().SetPosition(camPos);
-			world->GetMainCamera().SetPitch(angles.x);
-			world->GetMainCamera().SetYaw(angles.y);
-		}
-
-		UpdateKeys();
 		//check if menu should be displayed - winning or regular
 		if (menu || (player[0] != nullptr && player[0]->GetWin()) || (player[1] != nullptr && player[1]->GetWin()))
 		{
@@ -305,86 +287,27 @@ void TutorialGame::UpdateGame(float dt) {
 			UpdateHittyCube(dt, Server);
 			if (clientConnected) UpdateHittyCube(dt, Client);
 
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < MAX_ENTITIES; i++)
 			{
 				if (player[i] != nullptr)
 				{
-					//stop the player constantly colliding with the ground: gravity only applies when we're above it!
-					if (player[i]->GetTransform().GetPosition().y > 1)
-						player[i]->GetPhysicsObject()->useGravity = true;
-					else player[i]->GetPhysicsObject()->useGravity = false;
-
-					//check to see if the player is spotted
-					if (player[i]->GetSpotTimer() <= 0)
-					{
-						int score = player[i]->GetScore();
-						for (int i = 0; i < score; i++)
-						{
-							//if spotted, player drops a heist item, and gets sent back to spawn!
-							player[i]->AdjustScore(-1);
-							AddBonusToWorld(player[i]->GetTransform().GetPosition() + Vector3(i * 2, 1, 0), "heist")
-								->GetRenderObject()->SetColour({ 0,0,1,1 });
-						}
-						if (i == 0) player[i]->GetTransform().SetPosition(p1Spawn);
-						if (i == 1) player[i]->GetTransform().SetPosition(p2Spawn);
-						player[i]->SetSpotTimer(5.0f);
-					}
-
-					//attempt to un-spot the player ... 
-					player[i]->SetSpotted(false);
+					CheckPlayerGravity(i);
+					UpdateSpotStatus(i);					
 				}
 			}
-
-			//... but re-spot them if a camera can see them
-			for (int i = 0; i < 5; i++)
-			{
-				if (cam[i] != nullptr)
-					cam[i]->Update(dt);
-			}
-
+			UpdateCCTVCams(dt);
 			UpdateUI(dt);
-			//evil goose updates: if the goose has sent any messages to spawn game stuff, do so
-			evG->Update(dt);
-			if (evG->GetLockedExit() && !exitLocked)
-				LockExit();
-			if (evG->GetSpawnedExitCams() && !exitCamsSpawned)
-				SpawnExitDefenceCams();
-			if (evG->GetSpawnedMazeCams() && !mazeCamsSpawned)
-				SpawnMazeDefenceCams();
+			UpdateEvilGoose(dt);
 
-			world->UpdateWorld(dt);
-			renderer->Update(dt);
 			physics->Update(dt);
-			renderer->Render();
-
 		}
 	}
 
 	if (client)
 	{
 		thisClient->UpdateClient();
-		UpdateAsClient(dt);
-		if (!inSelectionMode) {
-			world->GetMainCamera().UpdateCamera(dt);
-		}
-		if (lockedObject != nullptr) {
-			Vector3 objPos = lockedObject->GetTransform().GetPosition();
-			Vector3 camPos = objPos + lockedObject->GetTransform().GetOrientation() * lockedOffset;
-
-			Matrix4 temp = Matrix4::BuildViewMatrix(camPos, objPos, Vector3(0, 1, 0));
-
-			Matrix4 modelMat = temp.Inverse();
-
-			Quaternion q(modelMat);
-			Vector3 angles = q.ToEuler(); //nearly there now!
-
-			world->GetMainCamera().SetPosition(camPos);
-			world->GetMainCamera().SetPitch(angles.x);
-			world->GetMainCamera().SetYaw(angles.y);
-		}
-
-		UpdateKeys();
-		//check if menu should be displayed - winning or regular
+		WriteAndSendClientPacket(dt);
+		
 		if (menu || (player[0] != nullptr && player[0]->GetWin()) || (player[1] != nullptr && player[1]->GetWin()))
 		{
 			Menu(dt, false);
@@ -393,22 +316,81 @@ void TutorialGame::UpdateGame(float dt) {
 		if (!paused)
 		{
 			UpdateUI(dt);
-		}
-
-		if (evG->GetLockedExit() && !exitLocked)
-			LockExit();
-		if (evG->GetSpawnedExitCams() && !exitCamsSpawned)
-			SpawnExitDefenceCams();
-		if (evG->GetSpawnedMazeCams() && !mazeCamsSpawned)
-			SpawnMazeDefenceCams();
-
-		//physics is done server-side
-		world->UpdateWorld(dt);
-		renderer->Update(dt);
-		renderer->Render();
+		}		
 	}
+	world->UpdateWorld(dt);
+	renderer->Update(dt);
+	renderer->Render();
 
 	Debug::UpdateRenderables(dt);
+}
+
+void TutorialGame::UpdateSpotStatus(int i)
+{
+	if (player[i]->GetSpotTimer() <= 0)
+	{
+		int score = player[i]->GetScore();
+		for (int i = 0; i < score; i++)
+		{
+			//if spotted, player drops a heist item, and gets sent back to spawn!
+			player[i]->AdjustScore(-1);
+			AddBonusToWorld(player[i]->GetTransform().GetPosition() + Vector3(i * 2, 1, 0), "heist")
+				->GetRenderObject()->SetColour({ 0,0,1,1 });
+		}
+		if (i == 0) player[i]->GetTransform().SetPosition(p1Spawn);
+		if (i == 1) player[i]->GetTransform().SetPosition(p2Spawn);
+		player[i]->SetSpotTimer(5.0f);
+	}
+
+	//attempt to un-spot the player ... 
+	player[i]->SetSpotted(false);
+}
+
+void TutorialGame::UpdateCCTVCams(float dt)
+{
+	for (int i = 0; i < CCTVStateObject::CamNames::MAX_CAMS; i++)
+	{
+		if (cam[i] != nullptr)
+			cam[i]->Update(dt);
+	}
+}
+
+void TutorialGame::UpdateEvilGoose(float dt)
+{
+	if(server || singlePlayer) evG->Update(dt);
+
+	if (evG->GetLockedExit() && !exitLocked)
+		LockExit();
+	if (evG->GetSpawnedExitCams() && !exitCamsSpawned)
+		SpawnExitDefenceCams();
+	if (evG->GetSpawnedMazeCams() && !mazeCamsSpawned)
+		SpawnMazeDefenceCams();
+}
+
+void TutorialGame::CheckPlayerGravity(int i)
+{
+	if (player[i]->GetTransform().GetPosition().y > 1)
+		player[i]->GetPhysicsObject()->useGravity = true;
+	else player[i]->GetPhysicsObject()->useGravity = false;
+}
+
+void TutorialGame::LockCamera()
+{
+	if (lockedObject != nullptr) {
+		Vector3 objPos = lockedObject->GetTransform().GetPosition();
+		Vector3 camPos = objPos + lockedObject->GetTransform().GetOrientation() * lockedOffset;
+
+		Matrix4 temp = Matrix4::BuildViewMatrix(camPos, objPos, Vector3(0, 1, 0));
+
+		Matrix4 modelMat = temp.Inverse();
+
+		Quaternion q(modelMat);
+		Vector3 angles = q.ToEuler(); //nearly there now!
+
+		world->GetMainCamera().SetPosition(camPos);
+		world->GetMainCamera().SetPitch(angles.x);
+		world->GetMainCamera().SetYaw(angles.y);
+	}
 }
 
 void TutorialGame::UpdateUI(float dt)
@@ -525,7 +507,6 @@ void TutorialGame::LaunchHittyCube(EntityType type)
 		hittyCube[type]->GetPhysicsObject()->AddTorque({ 5000,5000,5000 });
 		reloadTimer[type] = 0;
 	}
-
 }
 
 int TutorialGame::GenNextNetID()

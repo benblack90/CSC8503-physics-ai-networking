@@ -69,12 +69,17 @@ namespace NCL {
 			void InitSpawnGoal();
 			void InitDefaultFloor();
 			void InitMaze(Vector3 topLeft);
+			
 			void SpawnExitDefenceCams();
 			void SpawnMazeDefenceCams();
 			void LockExit();
+			void UpdateSpotStatus(int i);
+			void UpdateCCTVCams(float dt);
+			void UpdateEvilGoose(float dt);
 
-			bool SelectObject();
+			void LockCamera();
 			void LockedObjectMovement();
+			void CheckPlayerGravity(int i);
 			void BridgeConstraintTest();
 			void UpdateHittyCube(float dt, EntityType type);
 			void UpdateUI(float dt);			
@@ -84,7 +89,7 @@ namespace NCL {
 			void StartAsServer();
 			void StartAsClient();
 			void UpdateAsServer(float dt);
-			void UpdateAsClient(float dt);
+			void WriteAndSendClientPacket(float dt);
 			void BroadcastSnapshot(bool deltaFrame);
 			int GenNextNetID();
 			void UpdateMinimumState();

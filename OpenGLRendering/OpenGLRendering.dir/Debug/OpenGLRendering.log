@@ -1,5 +1,4 @@
-﻿  Building Custom Rule C:/Users/Ben/source/repos/CSC8503_physics_ai_networking/CSC8503 physics ai networking/OpenGLRendering/CMakeLists.txt
-  cmake_pch.cxx
+﻿  cmake_pch.cxx
   OGLTexture.h
   OGLShader.h
   OGLRenderer.h
