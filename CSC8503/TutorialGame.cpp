@@ -471,10 +471,6 @@ void TutorialGame::UpdateHittyCube(float dt, EntityType type)
 	reloadTimer[type] += dt;
 	if (hittyCube[type]->IsActive())
 	{
-		if (hittyCube[type]->GetTransform().GetPosition().y < 1 && hittyCube[type]->GetBoundingVolume()->type != VolumeType::AABB)
-			hittyCube[type]->SetBoundingVolume((CollisionVolume*)hittyCubeAABB);
-		if (hittyCube[type]->GetTransform().GetPosition().y > 1 && hittyCube[type]->GetBoundingVolume()->type != VolumeType::OBB)
-			hittyCube[type]->SetBoundingVolume((CollisionVolume*)hittyCubeOBB);
 		if (reloadTimer[type] > 4)
 		{
 			//reset velocities, to make sure it's not holding onto old velocities
@@ -485,9 +481,9 @@ void TutorialGame::UpdateHittyCube(float dt, EntityType type)
 			hittyCube[type]->SetActive(false);
 		}
 		//deal with hitty cube falling victim to a dropped physics cycle: we want to make sure it's definitely moving!
-		if (abs(hittyCube[type]->GetPhysicsObject()->GetLinearVelocity().x) < 0.1f &&
-			abs(hittyCube[type]->GetPhysicsObject()->GetLinearVelocity().z < 0.1f) &&
-			abs(hittyCube[type]->GetPhysicsObject()->GetForce().LengthSquared() < 0.1f))
+		if (abs(hittyCube[type]->GetPhysicsObject()->GetLinearVelocity().x) < 0.001f &&
+			abs(hittyCube[type]->GetPhysicsObject()->GetLinearVelocity().z < 0.001f) &&
+			abs(hittyCube[type]->GetPhysicsObject()->GetForce().LengthSquared() < 0.001f))
 		{
 			Vector3 forward = player[type]->GetTransform().GetOrientation() * Vector3(0, 350, -5000);
 			hittyCube[type]->GetPhysicsObject()->AddForce(forward);
@@ -501,10 +497,11 @@ void TutorialGame::LaunchHittyCube(EntityType type)
 	if (!hittyCube[type]->IsActive())
 	{
 		hittyCube[type]->SetActive(true);
+		hittyCube[type]->GetPhysicsObject()->useGravity = true;
 		hittyCube[type]->GetTransform().SetPosition(player[type]->GetTransform().GetPosition() + player[type]->GetTransform().GetOrientation() * Vector3(0, 2, -3));
-		Vector3 forward = player[type]->GetTransform().GetOrientation() * Vector3(0, 350, -3000);
+		Vector3 forward = player[type]->GetTransform().GetOrientation() * Vector3(0, 0.1, -1) * 5000;
 		hittyCube[type]->GetPhysicsObject()->AddForce(forward);
-		hittyCube[type]->GetPhysicsObject()->AddTorque({ 5000,5000,5000 });
+		hittyCube[type]->GetPhysicsObject()->AddTorque({ RandomValue(0,1000),RandomValue(0,1000),RandomValue(0,1000) });
 		reloadTimer[type] = 0;
 	}
 }
@@ -855,43 +852,6 @@ void TutorialGame::InitDefaultFloor() {
 }
 
 
-void TutorialGame::InitSphereGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing, float radius) {
-	for (int x = 0; x < numCols; ++x) {
-		for (int z = 0; z < numRows; ++z) {
-			Vector3 position = Vector3(x * colSpacing, 10.0f, z * rowSpacing);
-			AddSphereToWorld(position, radius, 1.0f);
-		}
-	}
-	AddFloorToWorld(Vector3(0, -2, 0));
-}
-
-void TutorialGame::InitMixedGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing) {
-	float sphereRadius = 1.0f;
-	Vector3 cubeDims = Vector3(1, 1, 1);
-
-	for (int x = 0; x < numCols; ++x) {
-		for (int z = 0; z < numRows; ++z) {
-			Vector3 position = Vector3(x * colSpacing, 10.0f, z * rowSpacing);
-
-			if (rand() % 2) {
-				AddAABBCubeToWorld(position, cubeDims);
-			}
-			else {
-				AddSphereToWorld(position, sphereRadius);
-			}
-		}
-	}
-}
-
-void TutorialGame::InitCubeGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing, const Vector3& cubeDims) {
-	for (int x = 1; x < numCols + 1; ++x) {
-		for (int z = 1; z < numRows + 1; ++z) {
-			Vector3 position = Vector3(x * colSpacing, 5.0f, z * rowSpacing);
-			AddAABBCubeToWorld(position, cubeDims, 1.0f);
-		}
-	}
-}
-
 void TutorialGame::InitCubeWall(int numHoriz, int numVert, const Vector3& bottomLeft, const Vector3& cubeDims, bool xDir)
 {
 	for (int y = 0; y < numVert; y++)
@@ -1000,52 +960,4 @@ void TutorialGame::InitSpawnGoal()
 	GameObject* b = AddStaticAABBCubeToWorld(Vector3(p1Spawn.x - volume->GetHalfDimensions().x, p1Spawn.y, p1Spawn.z), { 1,1,10 });
 	b = AddStaticAABBCubeToWorld(Vector3(p1Spawn.x + volume->GetHalfDimensions().x, p1Spawn.y, p1Spawn.z), { 1,1,10 });
 	b = AddStaticAABBCubeToWorld(Vector3(p1Spawn.x, p1Spawn.y, p1Spawn.z + volume->GetHalfDimensions().z), { 10,1,1 });
-}
-
-
-void TutorialGame::BridgeConstraintTest()
-{
-	Vector3 cubeSize = Vector3(8, 8, 8);
-
-	float invCubeMass = 5;
-	int numLinks = 10;
-	float maxDistance = 30;
-	float cubeDistance = 20;
-
-	Vector3 startPos = Vector3(50, 100, 50);
-
-	GameObject* start = AddAABBCubeToWorld(startPos + Vector3(0, 0, 0), cubeSize, 0);
-	GameObject* end = AddAABBCubeToWorld(startPos + Vector3((numLinks + 2) * cubeDistance, 0, 0), cubeSize, 0);
-	GameObject* previous = start;
-
-	for (int i = 0; i < numLinks; i++)
-	{
-		GameObject* block = AddAABBCubeToWorld(startPos + Vector3((i + 1) * cubeDistance, 0, 0), cubeSize, invCubeMass);
-		PositionConstraint* constraint = new PositionConstraint(previous, block, maxDistance);
-		world->AddConstraint(constraint);
-		previous = block;
-	}
-	PositionConstraint* constraint = new PositionConstraint(previous, end, maxDistance);
-	world->AddConstraint(constraint);
-}
-
-StateGameObject* TutorialGame::AddStateObjectToWorld(const Vector3& position)
-{
-	StateGameObject* apple = new StateGameObject();
-
-	SphereVolume* volume = new SphereVolume(0.5f);
-	apple->SetBoundingVolume((CollisionVolume*)volume);
-	apple->GetTransform()
-		.SetScale(Vector3(2, 2, 2))
-		.SetPosition(position);
-
-	apple->SetRenderObject(new RenderObject(&apple->GetTransform(), sphereMesh, nullptr, basicShader));
-	apple->SetPhysicsObject(new PhysicsObject(&apple->GetTransform(), apple->GetBoundingVolume()));
-
-	apple->GetPhysicsObject()->SetInverseMass(1.0f);
-	apple->GetPhysicsObject()->InitSphereInertia();
-
-	world->AddGameObject(apple);
-
-	return apple;
 }

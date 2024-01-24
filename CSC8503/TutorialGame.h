@@ -61,9 +61,6 @@ namespace NCL {
 			test scenarios (constraints, collision types, and so on). 
 			*/
 
-			void InitSphereGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing, float radius);
-			void InitMixedGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing);
-			void InitCubeGridWorld(int numRows, int numCols, float rowSpacing, float colSpacing, const Vector3& cubeDims);
 			void InitCubeWall(int numHoriz, int numVert, const Vector3& bottomLeft, const Vector3& cubeDims, bool xDir);
 			void InitCubeHouse(int numHoriz, int numVert, const Vector3& bottomLeft, const Vector3& cubeDims);
 			void InitSpawnGoal();
@@ -80,7 +77,6 @@ namespace NCL {
 			void LockCamera();
 			void LockedObjectMovement();
 			void CheckPlayerGravity(int i);
-			void BridgeConstraintTest();
 			void UpdateHittyCube(float dt, EntityType type);
 			void UpdateUI(float dt);			
 			void Menu(float dt, bool startUp);
@@ -107,9 +103,6 @@ namespace NCL {
 			EvilGoose* AddEnemyToWorld(const Vector3& position);
 			GameObject* AddBonusToWorld(const Vector3& position, std::string name);
 			CCTVStateObject* AddCameraPoleToWorld(const Vector3& position, float yaw, float pitch);
-
-			StateGameObject* AddStateObjectToWorld(const Vector3& position);
-			StateGameObject* testStateObject;
 
 #ifdef USEVULKAN
 			GameTechVulkanRenderer*	renderer;
