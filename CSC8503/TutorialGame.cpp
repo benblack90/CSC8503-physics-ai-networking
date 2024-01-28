@@ -471,7 +471,7 @@ void TutorialGame::UpdateHittyCube(float dt, EntityType type)
 	reloadTimer[type] += dt;
 	if (hittyCube[type]->IsActive())
 	{
-		if (reloadTimer[type] > 4)
+		if (reloadTimer[type] > TIME_TO_RELOAD)
 		{
 			//reset velocities, to make sure it's not holding onto old velocities
 			hittyCube[type]->GetPhysicsObject()->ClearForces();

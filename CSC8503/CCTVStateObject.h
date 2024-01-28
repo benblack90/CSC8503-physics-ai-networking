@@ -1,5 +1,6 @@
 #pragma once
 #include "Block.h"
+#include "Ray.h"
 
 
 
@@ -29,8 +30,14 @@ namespace NCL
 
         protected:
             
-            void SearchRotate(float sceneTime, float dt);
+            void SearchRotate(float sceneTime);
             void TrackPlayer();
+            void KillIfNoPole();
+            void SpotPlayer(int index, GameObject* closest, RayCollision& rayColl);
+            GameObject* RayToPlayer(const Vector3& toPNorm, RayCollision& rayColl);
+            const int MAX_POSS_PLAYERS = 2;
+            const float DOT_PROD_TO_SPOT = 0.9f;
+            const int MAX_DIST = 150;
 
             StateMachine* stateMachine;
             PlayerObject* trackTarget;

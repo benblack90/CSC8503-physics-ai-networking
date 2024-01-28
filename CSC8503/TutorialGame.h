@@ -113,6 +113,7 @@ namespace NCL {
 			GameWorld*			world;
 
 			KeyboardMouseController controller;
+			const int TIME_TO_RELOAD = 4;
 
 			bool useGravity;
 			bool inSelectionMode;
