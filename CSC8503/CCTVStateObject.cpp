@@ -57,9 +57,6 @@ CCTVStateObject::~CCTVStateObject() {
 
 void CCTVStateObject::Update(float dt) {
 
-
-
-	//only do any of the state machine stuff if the camdera hasn't been knocked off its pole
 	if (layer & tempStatic)
 	{
 		KillIfNoPole();
@@ -78,7 +75,7 @@ void CCTVStateObject::Update(float dt) {
 
 				if (dotProd > DOT_PROD_TO_SPOT && toP.Length() < MAX_DIST && closest != nullptr)
 				{
-					if (closest->GetCollisionLayer() == player)
+					if (closest->GetCollisionLayer() & player)
 					{
 						SpotPlayer(i, closest, rayColl);
 					}
