@@ -1,4 +1,4 @@
-# Please note this project was created with CMake, and will thus need re-cmaking on your end. Delete the cache first before running cmake. 
+Please note this project was created with CMake, and will thus need re-cmaking on your end. Delete the cache first before running cmake. 
 
 ## FOR ANYONE REVIEWING THIS CODE 
 
