@@ -1,4 +1,8 @@
-FOR ANYONE REVIEWING THIS CODE: This C++ project starts from code given to us by Dr Rich Davison at Newcastle University. Naturally, I want to draw your attention to code I actually wrote rather than his (not that it isn't brilliant!).
+#Please note this project was created with CMake, and will thus need re-cmaking on your end. Delete the cache first before running cmake. 
+
+#FOR ANYONE REVIEWING THIS CODE 
+
+This C++ project starts from code given to us by Dr Rich Davison at Newcastle University. Naturally, I want to draw your attention to code I actually wrote rather than his (not that it isn't brilliant!).
 
 All the code in Block.h, CCTVStateObject.h/cpp, EvilGoose.h/cpp, Menu.h, Player.h, SpawnGoal.h, and the majority of TutorialGame.h/cpp is my own. 
 In TutorialGame.cpp, a lot of the network code is heavily altered, but not originated by me: NetworkedGame.ccp shows what we were given, so any
